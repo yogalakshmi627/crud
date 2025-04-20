@@ -69,18 +69,18 @@ const handlesubmit=async(e)=>{
     await axios.patch(`http://localhost:8000/users/${userData.id}`,
       userData).then((res)=>{
     // console.log(res);
-     // setUsers(res.data);
-     // setFilteredUsers(res.data);
-     getAllUsers();
+     //setUsers(res.data);
+     //setFilteredUsers(res.data);
+     getAllUsers(res.data);
       setIsModelOpen(false);
     })
   }else{
   await axios.post("http://localhost:8000/users",
     userData).then((res)=>{
   // console.log(res);
-    //setUsers(res.data);
-   // setFilteredUsers(res.data);
-   getAllUsers(); 
+   // setUsers(res.data);
+   //setFilteredUsers(res.data);
+   getAllUsers(res.data); 
    setIsModelOpen(false);
     setUserData({name:"",age:"",city:""});
   })
